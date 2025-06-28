@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,5 +32,31 @@ public class UserService {
 
     public BCryptPasswordEncoder getPasswordEncoder() {
         return passwordEncoder;
+    }
+
+    public User updateProfileFields(Long userId, String name, String bio, String profileImageUrl, String techStack) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
+        user.updateProfile(name, bio, profileImageUrl, techStack);
+        return userRepository.save(user);
+    }
+
+    public User getProfile(Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
+    }
+
+    public List<User> findMentors(String techStack, String sortBy) {
+        List<User> mentors = userRepository.findAll().stream()
+            .filter(u -> "mentor".equals(u.getRole()))
+            .filter(u -> techStack == null || (u.getTechStack() != null && u.getTechStack().contains(techStack)))
+            .sorted((a, b) -> {
+                if ("name".equals(sortBy)) {
+                    return a.getName().compareToIgnoreCase(b.getName());
+                } else if ("techStack".equals(sortBy)) {
+                    return (a.getTechStack() != null ? a.getTechStack() : "").compareToIgnoreCase(b.getTechStack() != null ? b.getTechStack() : "");
+                }
+                return 0;
+            })
+            .collect(java.util.stream.Collectors.toList());
+        return mentors;
     }
 }

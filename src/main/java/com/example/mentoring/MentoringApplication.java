@@ -5,9 +5,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class MentoringApplication {
+public class MentoringApplication implements WebMvcConfigurer {
     public static void main(String[] args) {
         SpringApplication.run(MentoringApplication.class, args);
     }
@@ -21,5 +23,10 @@ public class MentoringApplication {
                 userService.registerUser("mentee1@example.com", "menteepass", "mentee", "멘티1");
             } catch (Exception ignored) {}
         };
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addRedirectViewController("/", "/swagger-ui/index.html");
     }
 }

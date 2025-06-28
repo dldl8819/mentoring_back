@@ -1,7 +1,9 @@
 package com.example.mentoring.config;
 
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -10,6 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+@Profile("!test") // 테스트 환경에서는 SwaggerConfig를 로드하지 않음
 public class SwaggerConfig {
     @Bean
     public Docket api() {
@@ -20,3 +23,6 @@ public class SwaggerConfig {
                 .build();
     }
 }
+*/
+
+// springdoc-openapi로 대체됨. 필요시 삭제 가능
