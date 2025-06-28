@@ -1,0 +1,68 @@
+#
+# Add project labels
+#
+
+# Add 'summer of code' label to any files in the Summer of Code project
+'summer of code':
+  - programs/summerofcode/*
+  - programs/summerofcode/**/*
+
+# Add 'season of docs' label to any files in the season of docs project
+'season of docs':
+  - programs/seasonofdocs/*
+  - programs/seasonofdocs/**/*
+
+# Add 'lfx mentorship' label to any files in the lfx mentorship project
+'lfx mentorship':
+  - programs/lfx-mentorship/*
+  - programs/lfx-mentorship/**/*
+
+#
+# Add date/term specific labels
+#
+
+# Add '2023' to any change to 2023 project files
+2023:
+  - programs/summerofcode/2023.md
+  - programs/lfx-mentorship/2023/*
+  - programs/lfx-mentorship/2023/**/*
+  - mentoring-wg/2023-meeting-minutes.md
+
+# Add '2024' to any change to 2024 project files
+2024:
+  - programs/summerofcode/2024.md
+  - programs/lfx-mentorship/2024/*
+  - programs/lfx-mentorship/2024/**/*
+
+# Add '2025' to any change to 2025 project files
+2025:
+  - programs/summerofcode/2025.md
+  - programs/lfx-mentorship/2025/*
+  - programs/lfx-mentorship/2025/**/*
+
+# Add 'Term 1: March-May' label to files for that term
+'Term 1: March-May':
+  - programs/lfx-mentorship/2023/01-Mar-May/*
+  - programs/lfx-mentorship/2023/01-Mar-May/**/*
+  - programs/lfx-mentorship/2024/01-Mar-May/*
+  - programs/lfx-mentorship/2024/01-Mar-May/**/*
+  - programs/lfx-mentorship/2025/01-Mar-May/*
+  - programs/lfx-mentorship/2025/01-Mar-May/**/*
+
+# Add 'Term 2: June-Aug' label to files for that term
+'Term 2: June-Aug':
+  - programs/lfx-mentorship/2023/02-Jun-Aug/*
+  - programs/lfx-mentorship/2023/02-Jun-Aug/**/*
+  - programs/lfx-mentorship/2024/02-Jun-Aug/*
+  - programs/lfx-mentorship/2024/02-Jun-Aug/**/*
+  - programs/lfx-mentorship/2025/02-Jun-Aug/*
+  - programs/lfx-mentorship/2025/02-Jun-Aug/**/*
+
+# Add 'Term 3: Sept-Nov' label to files for that term
+'Term 3: Sept-Nov':
+  - programs/lfx-mentorship/2023/03-Sep-Nov/*
+  - programs/lfx-mentorship/2023/03-Sep-Nov/**/*
+  - programs/lfx-mentorship/2024/03-Sep-Nov/*
+  - programs/lfx-mentorship/2024/03-Sep-Nov/**/*
+  - programs/lfx-mentorship/2025/03-Sep-Nov/*
+  - programs/lfx-mentorship/2025/03-Sep-Nov/**/*
